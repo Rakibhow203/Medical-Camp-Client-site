@@ -10,15 +10,24 @@ import {
   signInWithPopup,
   signOut,
 
+
 } from 'firebase/auth'
 
 
 import axios from 'axios'
 import auth from '../firebase';
 
+
+
 export const AuthContext = createContext(null)
+
+
+
 const githubProvider = new GithubAuthProvider();
 const googleProvider = new GoogleAuthProvider()
+
+
+
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
@@ -79,7 +88,8 @@ const AuthProvider = ({ children }) => {
     signIn,
     signInWithGoogle,
     logOut,
-    updateUserProfile, githubLogin
+    updateUserProfile, githubLogin,
+
   }
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
