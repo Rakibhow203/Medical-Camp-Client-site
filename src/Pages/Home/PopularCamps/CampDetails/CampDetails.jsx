@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Loading from "../../../../Loding/Loading";
+import UseAxiosCommon from "../../../../Component/Hook/UseAxiosCommon";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import useAuth from "../../../../Component/Hook/UseAuth";
 
 
 
@@ -12,7 +16,7 @@ import Loading from "../../../../Loding/Loading";
 const CampDetails = () => {
 
   const [showModal, setShowModal] = useState(false);
-
+  const { user } = useAuth()
   const [participantInfo, setParticipantInfo] = useState({
     name: '',
     email: '',
@@ -21,6 +25,7 @@ const CampDetails = () => {
     gender: '',
     emergencyContact: ''
   });
+  console.log(user);
 
 
   const camps = useLoaderData()
@@ -41,26 +46,7 @@ const CampDetails = () => {
     setParticipantInfo({ ...participantInfo, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    const response = await fetch('/api/register-participant', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        campId: id,
-        ...participantInfo,
-        name: loggedInUser.name,
-        email: loggedInUser.email
-      })
-    });
-
-    if (response.ok) {
-      setShowModal(false);
-      // Update the participant count in the UI
-      camp.participantCount += 1;
-    }
-  };
 
 
   if (!camp) {
@@ -71,8 +57,53 @@ const CampDetails = () => {
 
   const { campName, image, campFees, dateTime, location, healthcareProfessionalName, participantCount, description } = camp;
 
+  const addPerticipent = e => {
+    e.preventDefault()
+    const form = e.target;
+    const name = form.name.value;
+    const campFees = form.campFees.value;
+    const location = form.location.value;
+    const health = form.health.value;
+    // const user = loggedInUser.name;
+    // const email = loggedInUser.email;
+    const age = form.age.value;
+    const phone = form.phone.value;
+    const gender = form.gender.value;
+    const emergencyContact = form.emergencyContact.value;
+    const email = user.email;
+    const addAll = {
+      name, campFees, location, health, email, age, phone, gender, emergencyContact
+    }
+    fetch('http://localhost:5000/participant', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(addAll),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: `${name}Has Join SuccessFull`,
+            width: 600,
+            padding: "3em",
+            color: "#716add",
+            background: "#fff url(/images/trees.png)",
+            backdrop: `
+    rgba(0,0,123,0.4)
+    url("/images/nyan-cat.gif")
+    left top
+    no-repeat
+  `
+          });
+        }
+      }
+      )
 
 
+  }
   return (
     <div className="max-w-2xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-4">{campName}</h1>
@@ -92,33 +123,47 @@ const CampDetails = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded shadow-lg w-full max-w-lg">
             <h2 className="text-2xl font-bold mb-4">Join Camp</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={addPerticipent}>
               <div className="mb-4">
                 <label className="block text-gray-700">Camp Name</label>
-                <input type="text" value={campName} readOnly className="mt-1 block w-full" />
+                <input
+                  name="name"
+                  type="text" value={campName} readOnly className="mt-1 block w-full" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Price</label>
-                <input type="text" value={campFees} readOnly className="mt-1 block w-full" />
+                <input
+                  name="campFees"
+                  type="text" value={campFees} readOnly className="mt-1 block w-full" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Location</label>
-                <input type="text" value={location} readOnly className="mt-1 block w-full" />
+                <input
+                  name="location"
+                  type="text" value={location} readOnly className="mt-1 block w-full" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Professional</label>
-                <input type="text" value={healthcareProfessionalName} readOnly className="mt-1 block w-full" />
+                <input
+                  name="health"
+                  type="text" value={healthcareProfessionalName} readOnly className="mt-1 block w-full" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Participant Name</label>
-                <input type="text" value={loggedInUser.name} readOnly className="mt-1 block w-full" />
+                <input
+
+                  type="text" value={loggedInUser.name} readOnly className="mt-1 block w-full" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Participant Email</label>
-                <input type="email" value={loggedInUser.email} readOnly className="mt-1 block w-full" />
+                <input
+
+                  type="email" value={loggedInUser.email} readOnly className="mt-1 block w-full" />
               </div>
               <div className="mb-4">
-                <label className="block text-gray-700">Age</label>
+                <label
+
+                  className="block text-gray-700">Age</label>
                 <input type="number" name="age" value={participantInfo.age} onChange={handleInputChange} className="mt-1 block w-full" required />
               </div>
               <div className="mb-4">
@@ -140,7 +185,11 @@ const CampDetails = () => {
               </div>
               <div className="flex justify-end">
                 <button type="button" onClick={() => setShowModal(false)} className="mr-4 px-4 py-2 bg-gray-300 text-gray-800 rounded">Cancel</button>
-                <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">Submit</button>
+                <input
+                  className="px-4 w-full py-2 mt-4 rounded hover:bg-[#6a49ffca]  bg-[#ffd5496b] duration-200 text-white cursor-pointer font-semibold"
+                  type="submit"
+                  value="Join Camp"
+                />
               </div>
             </form>
           </div>
