@@ -1,0 +1,442 @@
+[
+  {
+    "_id": "61234a6f33e888001f4d32d5",
+    "campName": "Eye Care Camp",
+    "image": "https://i.ibb.co/ZNrNrXG/premium-photo-1677333502598-c7023d305395.jpg",
+    "campFees": "$15",
+    "dateTime": "2024-11-15T10:00:00",
+    "location": "Eye Hospital",
+    "healthcareProfessionalName": "Dr. Martinez",
+    "participantCount": 60,
+    "description": "Get your eyes checked by expert ophthalmologists. Free eye screenings and consultations available for all participants.",
+    "participants": [
+      {
+        "participantEmail": "sarah@example.com",
+        "age": 25,
+        "phoneNumber": "+1122334455",
+        "gender": "Female",
+        "emergencyContact": "+9988776655"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32d6",
+    "campName": "Dental Checkup Camp",
+    "image": "https://i.ibb.co/FY4Kxx7/premium-photo-1681997170214-813d5322f18e.jpg",
+    "campFees": "$20",
+    "dateTime": "2024-11-20T09:00:00",
+    "location": "Dental Clinic",
+    "healthcareProfessionalName": "Dr. Smith",
+    "participantCount": 45,
+    "description": "Free dental checkups and cleaning services provided by experienced dentists.",
+    "participants": [
+      {
+        "participantEmail": "john@example.com",
+        "age": 30,
+        "phoneNumber": "+2233445566",
+        "gender": "Male",
+        "emergencyContact": "+1122334455"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32d7",
+    "campName": "Cardiology Camp",
+    "image": "https://i.ibb.co/GsgHZVd/amrita-hospital-pediatric-cardiology-health-camp-tamil-nadu-thumb-1200x675.jpg",
+    "campFees": "$25",
+    "dateTime": "2024-12-01T11:00:00",
+    "location": "Heart Institute",
+    "healthcareProfessionalName": "Dr. Patel",
+    "participantCount": 80,
+    "description": "Comprehensive heart health checkups and consultations with cardiologists.",
+    "participants": [
+      {
+        "participantEmail": "emma@example.com",
+        "age": 40,
+        "phoneNumber": "+3344556677",
+        "gender": "Female",
+        "emergencyContact": "+2233445566"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32d8",
+    "campName": "Nutrition Awareness Camp",
+    "image": "https://i.ibb.co/MhvC4HS/7ab5d633-2085-4a25-b16f-34d7829cb058.jpg",
+    "campFees": "$10",
+    "dateTime": "2024-12-05T10:30:00",
+    "location": "Community Center",
+    "healthcareProfessionalName": "Dr. Green",
+    "participantCount": 100,
+    "description": "Learn about healthy eating habits and get personalized nutrition advice.",
+    "participants": [
+      {
+        "participantEmail": "alice@example.com",
+        "age": 35,
+        "phoneNumber": "+4455667788",
+        "gender": "Female",
+        "emergencyContact": "+3344556677"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32d9",
+    "campName": "General Health Checkup Camp",
+    "image": "https://i.ibb.co/T4SxRG0/download.jpg",
+    "campFees": "$30",
+    "dateTime": "2024-12-10T09:30:00",
+    "location": "Health Clinic",
+    "healthcareProfessionalName": "Dr. Lee",
+    "participantCount": 70,
+    "description": "Get a complete health checkup and consultation with general physicians.",
+    "participants": [
+      {
+        "participantEmail": "michael@example.com",
+        "age": 50,
+        "phoneNumber": "+5566778899",
+        "gender": "Male",
+        "emergencyContact": "+4455667788"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32da",
+    "campName": "Pediatric Care Camp",
+    "image": "https://i.ibb.co/X4xmZq9/images.jpg",
+    "campFees": "$15",
+    "dateTime": "2024-12-12T10:00:00",
+    "location": "Children's Hospital",
+    "healthcareProfessionalName": "Dr. Brown",
+    "participantCount": 50,
+    "description": "Free pediatric checkups and vaccinations for children.",
+    "participants": [
+      {
+        "participantEmail": "lisa@example.com",
+        "age": 5,
+        "phoneNumber": "+6677889900",
+        "gender": "Female",
+        "emergencyContact": "+5566778899"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32db",
+    "campName": "Orthopedic Camp",
+    "image": "https://i.ibb.co/Y7dSF0k/istockphoto-2010684535-170667a.webp",
+    "campFees": "$25",
+    "dateTime": "2024-12-15T09:00:00",
+    "location": "Orthopedic Center",
+    "healthcareProfessionalName": "Dr. Williams",
+    "participantCount": 55,
+    "description": "Expert consultations and treatments for bone and joint issues.",
+    "participants": [
+      {
+        "participantEmail": "david@example.com",
+        "age": 45,
+        "phoneNumber": "+7788990011",
+        "gender": "Male",
+        "emergencyContact": "+6677889900"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32dc",
+    "campName": "Mental Health Awareness Camp",
+    "image": "https://i.ibb.co/QdvMqgm/premium-photo-1661347860342-59a8edbba667.jpg",
+    "campFees": "$20",
+    "dateTime": "2024-12-20T10:00:00",
+    "location": "Mental Health Center",
+    "healthcareProfessionalName": "Dr. Johnson",
+    "participantCount": 40,
+    "description": "Workshops and consultations on mental health and well-being.",
+    "participants": [
+      {
+        "participantEmail": "nina@example.com",
+        "age": 28,
+        "phoneNumber": "+8899001122",
+        "gender": "Female",
+        "emergencyContact": "+7788990011"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32dd",
+    "campName": "Diabetes Management Camp",
+    "image": "https://i.ibb.co/PtJ95sD/premium-photo-1716764060262-2289b3c6eb17.jpg",
+    "campFees": "$18",
+    "dateTime": "2024-12-25T09:00:00",
+    "location": "Diabetes Center",
+    "healthcareProfessionalName": "Dr. Anderson",
+    "participantCount": 65,
+    "description": "Get tips and consultations on managing diabetes effectively.",
+    "participants": [
+      {
+        "participantEmail": "paul@example.com",
+        "age": 55,
+        "phoneNumber": "+9900112233",
+        "gender": "Male",
+        "emergencyContact": "+8899001122"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32de",
+    "campName": "Women's Health Camp",
+    "image": "https://i.ibb.co/GMm143L/istockphoto-1614146226-170667a.webp",
+    "campFees": "$20",
+    "dateTime": "2024-12-30T10:00:00",
+    "location": "Women's Health Clinic",
+    "healthcareProfessionalName": "Dr. Wilson",
+    "participantCount": 75,
+    "description": "Comprehensive health checkups and consultations for women.",
+    "participants": [
+      {
+        "participantEmail": "maria@example.com",
+        "age": 35,
+        "phoneNumber": "+1100223344",
+        "gender": "Female",
+        "emergencyContact": "+9900112233"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32df",
+    "campName": "Vision Screening Camp",
+    "image": "https://i.ibb.co/K9KCnxG/premium-photo-1681152384968-8939753a9068.jpg",
+    "campFees": "$15",
+    "dateTime": "2024-12-31T11:00:00",
+    "location": "Vision Center",
+    "healthcareProfessionalName": "Dr. Adams",
+    "participantCount": 85,
+    "description": "Free vision screenings and consultations with eye specialists.",
+    "participants": [
+      {
+        "participantEmail": "oliver@example.com",
+        "age": 29,
+        "phoneNumber": "+2200334455",
+        "gender": "Male",
+        "emergencyContact": "+1100223344"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e0",
+    "campName": "Hearing Checkup Camp",
+    "image": "https://i.ibb.co/fqc30dq/premium-photo-1677610857081-8b444ca4b8e6.jpg",
+    "campFees": "$15",
+    "dateTime": "2024-12-10T09:00:00",
+    "location": "Hearing Clinic",
+    "healthcareProfessionalName": "Dr. Scott",
+    "participantCount": 45,
+    "description": "Free hearing checkups and consultations with audiologists.",
+    "participants": [
+      {
+        "participantEmail": "emma.s@example.com",
+        "age": 32,
+        "phoneNumber": "+2233445566",
+        "gender": "Female",
+        "emergencyContact": "+2200334455"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e1",
+    "campName": "Skin Care Camp",
+    "image": "https://i.ibb.co/CtCgjym/premium-photo-1663050827060-a8e8cbcf9644.jpg",
+    "campFees": "$25",
+    "dateTime": "2024-12-05T10:00:00",
+    "location": "Dermatology Clinic",
+    "healthcareProfessionalName": "Dr. Walker",
+    "participantCount": 50,
+    "description": "Free skin checkups and consultations with dermatologists.",
+    "participants": [
+      {
+        "participantEmail": "sophia@example.com",
+        "age": 27,
+        "phoneNumber": "+3344556677",
+        "gender": "Female",
+        "emergencyContact": "+2233445566"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e2",
+    "campName": "Cardiology Checkup Camp",
+    "image": "https://i.ibb.co/8K5shqb/premium-photo-1664475547853-6c8b38ee9e36.jpg",
+    "campFees": "$30",
+    "dateTime": "2024-12-18T10:00:00",
+    "location": "Cardiology Center",
+    "healthcareProfessionalName": "Dr. Hall",
+    "participantCount": 55,
+    "description": "Free cardiology checkups and consultations with cardiologists.",
+    "participants": [
+      {
+        "participantEmail": "jackson@example.com",
+        "age": 42,
+        "phoneNumber": "+4455667788",
+        "gender": "Male",
+        "emergencyContact": "+3344556677"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e3",
+    "campName": "Allergy Testing Camp",
+    "image": "https://i.ibb.co/KX5Qrh4/premium-photo-1686836995357-9661babddf0f.jpg",
+    "campFees": "$20",
+    "dateTime": "2024-12-22T09:00:00",
+    "location": "Allergy Center",
+    "healthcareProfessionalName": "Dr. Young",
+    "participantCount": 60,
+    "description": "Free allergy testing and consultations with allergists.",
+    "participants": [
+      {
+        "participantEmail": "james@example.com",
+        "age": 35,
+        "phoneNumber": "+5566778899",
+        "gender": "Male",
+        "emergencyContact": "+4455667788"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e4",
+    "campName": "Orthodontics Camp",
+    "image": "https://i.ibb.co/tK5Rqn9/premium-photo-1702599011315-d7a589a91a09.jpg",
+    "campFees": "$25",
+    "dateTime": "2024-12-28T10:00:00",
+    "location": "Orthodontics Clinic",
+    "healthcareProfessionalName": "Dr. King",
+    "participantCount": 35,
+    "description": "Free orthodontics consultations and treatments.",
+    "participants": [
+      {
+        "participantEmail": "charlotte@example.com",
+        "age": 15,
+        "phoneNumber": "+6677889900",
+        "gender": "Female",
+        "emergencyContact": "+5566778899"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e5",
+    "campName": "Pulmonary Care Camp",
+    "image": "https://i.ibb.co/2WsxycP/premium-photo-1666299771986-7c94dac6a812.jpg",
+    "campFees": "$20",
+    "dateTime": "2024-12-15T10:00:00",
+    "location": "Pulmonary Center",
+    "healthcareProfessionalName": "Dr. Wright",
+    "participantCount": 50,
+    "description": "Free checkups and consultations for lung health.",
+    "participants": [
+      {
+        "participantEmail": "amelia@example.com",
+        "age": 30,
+        "phoneNumber": "+7788990011",
+        "gender": "Female",
+        "emergencyContact": "+6677889900"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e6",
+    "campName": "Oncology Awareness Camp",
+    "image": "https://i.ibb.co/0BTCNmZ/premium-photo-1664476773566-a28690354fc9.jpg",
+    "campFees": "$25",
+    "dateTime": "2024-12-25T11:00:00",
+    "location": "Oncology Center",
+    "healthcareProfessionalName": "Dr. Harris",
+    "participantCount": 65,
+    "description": "Learn about cancer prevention and get free screenings.",
+    "participants": [
+      {
+        "participantEmail": "logan@example.com",
+        "age": 50,
+        "phoneNumber": "+8899001122",
+        "gender": "Male",
+        "emergencyContact": "+7788990011"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e7",
+    "campName": "Gastroenterology Camp",
+    "image": "https://i.ibb.co/wYjmPmw/premium-photo-1664303492452-76f0745336fd.jpg",
+    "campFees": "$20",
+    "dateTime": "2024-12-30T09:00:00",
+    "location": "Gastroenterology Clinic",
+    "healthcareProfessionalName": "Dr. Clark",
+    "participantCount": 70,
+    "description": "Free checkups and consultations for digestive health.",
+    "participants": [
+      {
+        "participantEmail": "mason@example.com",
+        "age": 45,
+        "phoneNumber": "+9900112233",
+        "gender": "Male",
+        "emergencyContact": "+8899001122"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e8",
+    "campName": "Physical Therapy Camp",
+    "image": "https://i.ibb.co/7CHjJJQ/premium-photo-1710467003443-4dcf21bf58fe.jpg",
+    "campFees": "$15",
+    "dateTime": "2024-12-05T10:00:00",
+    "location": "Therapy Center",
+    "healthcareProfessionalName": "Dr. Lewis",
+    "participantCount": 40,
+    "description": "Free physical therapy sessions and consultations.",
+    "participants": [
+      {
+        "participantEmail": "lucas@example.com",
+        "age": 50,
+        "phoneNumber": "+1100223344",
+        "gender": "Male",
+        "emergencyContact": "+9900112233"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32e9",
+    "campName": "Neurology Camp",
+    "image": "https://i.ibb.co/NSggwYg/premium-photo-1680700015823-06aa06893ced.jpg",
+    "campFees": "$30",
+    "dateTime": "2024-12-10T09:00:00",
+    "location": "Neurology Clinic",
+    "healthcareProfessionalName": "Dr. Robinson",
+    "participantCount": 55,
+    "description": "Free consultations and checkups for neurological health.",
+    "participants": [
+      {
+        "participantEmail": "liam@example.com",
+        "age": 60,
+        "phoneNumber": "+2200334455",
+        "gender": "Male",
+        "emergencyContact": "+1100223344"
+      }
+    ]
+  },
+  {
+    "_id": "61234a6f33e888001f4d32ea",
+    "campName": "Weight Management Camp",
+    "image": "https://i.ibb.co/PxZHW1s/premium-photo-1716312742961-c63635324d55.jpg",
+    "campFees": "$20",
+    "dateTime": "2024-12-15T10:00:00",
+    "location": "Fitness Center",
+    "healthcareProfessionalName": "Dr. Martinez",
+    "participantCount": 50,
+    "description": "Learn about weight management and get personalized advice.",
+    "participants": [
+      {
+        "participantEmail": "ava@example.com",
+        "age": 32,
+        "phoneNumber": "+3344556677",
+        "gender": "Female",
+        "emergencyContact": "+2233445566"
+      }
+    ]
+  }
+]
