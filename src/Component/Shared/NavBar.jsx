@@ -59,11 +59,11 @@ const NavBar = () => {
 
           <li className='text-black hover:bg-orange-100 rounded-lg'>
             {/* Use NavLink for Home with activeClassName */}
-            <NavLink exact to='/' activeClassName='active'>Home</NavLink>
+            <NavLink exact to='/' active ClassName='active'>Home</NavLink>
           </li>
 
           <li className='text-black hover:bg-orange-100 rounded-lg'>
-            <NavLink to='/AvailableCamps' activeClassName='active'>Available Camps</NavLink>
+            <NavLink to='/AvailableCamps'>Available Camps</NavLink>
           </li>
           {/* <li className='text-black hover:bg-orange-100 rounded-lg'>
             <NavLink to='/gallery' activeClassName='active'>Gallery</NavLink>

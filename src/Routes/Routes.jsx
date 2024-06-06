@@ -9,8 +9,10 @@ import CampDetails from "../Pages/Home/PopularCamps/CampDetails/CampDetails";
 import AvailableCampPage from "../Component/Shared/AvailableCampPage/AvailableCampPage";
 import LogIn from "../Component/JoinUs/LogIn";
 import Register from "../Component/JoinUs/Register/Register";
-
 import Dashboard from "../Component/Dashboard/Dashboard";
+import PrivateRoute from "./PrivateRoute";
+
+
 
 
 export const routers = createBrowserRouter([
@@ -48,7 +50,9 @@ export const routers = createBrowserRouter([
 
       {
         path: 'AvailableCamps',
-        element: <AvailableCampPage></AvailableCampPage>
+        element: <PrivateRoute>
+          <AvailableCampPage></AvailableCampPage>
+        </PrivateRoute>
 
       },
 
