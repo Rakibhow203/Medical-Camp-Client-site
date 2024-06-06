@@ -17,11 +17,17 @@ const NavBar = () => {
 
   const handleChange = (e) => {
     if (e.target.checked) {
-      setTheme('sunset');
+      setTheme('dark');
     } else {
       setTheme('light');
     }
   };
+
+  // const handleChange = (e) => {
+  //   // Toggle between light and dark themes
+  //   setTheme(e.target.checked ? 'dark' : 'light');
+  // };
+
 
   const handleLogOut = () => {
     Swal.fire({
@@ -40,7 +46,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className='navbar  shadow-2xl container px-4 mx-auto bg-orange-400 rounded-xl'>
+    <div className='navbar fixed  mb-10  container px-4 mx-auto z-10 bg-opacity-30  bg-green-500  max-w-screen-xl'>
       <div className='flex-1'>
         <Link to='/' className='flex gap-2 items-center'>
           <img className='w-auto h-14 rounded-full bg-white' src={logo} alt='' />
@@ -59,9 +65,9 @@ const NavBar = () => {
           <li className='text-black hover:bg-orange-100 rounded-lg'>
             <NavLink to='/AvailableCamps' activeClassName='active'>Available Camps</NavLink>
           </li>
-          <li className='text-black hover:bg-orange-100 rounded-lg'>
+          {/* <li className='text-black hover:bg-orange-100 rounded-lg'>
             <NavLink to='/gallery' activeClassName='active'>Gallery</NavLink>
-          </li>
+          </li> */}
           <li className="h-full w-14 mr-2">
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
