@@ -11,6 +11,7 @@ import LogIn from "../Component/JoinUs/LogIn";
 import Register from "../Component/JoinUs/Register/Register";
 import Dashboard from "../Component/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
+import OrganizerProfile from "../Component/Dashboard/OrganizerProfile";
 
 
 
@@ -59,15 +60,7 @@ export const routers = createBrowserRouter([
 
       // private routes
 
-      {
 
-        path: 'dashboard',
-        element: (
-          <Dashboard></Dashboard>
-
-        )
-
-      }
 
 
     ]
@@ -75,7 +68,19 @@ export const routers = createBrowserRouter([
 
   },
 
+  {
 
+    path: 'dashboard',
+    element: <PrivateRoute> <Dashboard></Dashboard>,</PrivateRoute>,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: 'organizer',
+        element: <OrganizerProfile></OrganizerProfile>
+      }
+    ]
+
+  }
 
 
 ]);
