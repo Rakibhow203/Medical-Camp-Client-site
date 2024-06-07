@@ -183,10 +183,10 @@ const CampDetails = () => {
                 <label className="block text-gray-700">Emergency Contact</label>
                 <input type="tel" name="emergencyContact" value={participantInfo.emergencyContact} onChange={handleInputChange} className="mt-1 block w-full" required />
               </div>
-              <div className="flex justify-end">
-                <button type="button" onClick={() => setShowModal(false)} className="mr-4 px-4 py-2 bg-gray-300 text-gray-800 rounded">Cancel</button>
+              <div className="flex justify-end gap-4">
+                <button type="button" onClick={() => setShowModal(false)} className="px-4 w-full py-2 mt-4 rounded hover:bg-[#FF0000] hover:text-white  bg-orange-300 duration-200 text-red-500 cursor-pointer font-bold">Cancel</button>
                 <input
-                  className="px-4 w-full py-2 mt-4 rounded hover:bg-[#6a49ffca]  bg-[#ffd5496b] duration-200 text-white cursor-pointer font-semibold"
+                  className="px-4 w-full py-2 mt-4 rounded hover:bg-green-500  bg-[#ffd5496b] duration-200 text-green-600 hover:text-white cursor-pointer font-bold"
                   type="submit"
                   value="Join Camp"
                 />

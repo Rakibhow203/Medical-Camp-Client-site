@@ -46,7 +46,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className='navbar   mb-8  container px-4 mx-auto z-10 bg-opacity-30  bg-green-500  max-w-screen-xl'>
+    <div className='navbar mb-8  container px-4 mx-auto z-10 bg-opacity-80  bg-white  max-w-screen-xl rounded-lg'>
       <div className='flex-1'>
         <Link to='/' className='flex gap-2 items-center'>
           <img className='w-auto h-14 rounded-full bg-white' src={logo} alt='' />

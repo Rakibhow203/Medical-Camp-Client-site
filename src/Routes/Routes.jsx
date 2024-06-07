@@ -12,6 +12,9 @@ import Register from "../Component/JoinUs/Register/Register";
 import Dashboard from "../Component/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import OrganizerProfile from "../Component/Dashboard/OrganizerProfile";
+import AddCamp from "../Component/Dashboard/AddCamp";
+import ManageRegisteredCamps from "../Component/Dashboard/ManageRegisteredCamps";
+import ManageCamps from "../Component/Dashboard/ManageCamps";
 
 
 
@@ -77,6 +80,22 @@ export const routers = createBrowserRouter([
       {
         path: 'organizer',
         element: <OrganizerProfile></OrganizerProfile>
+      },
+
+      {
+
+        path: 'addCamp',
+        element: <AddCamp></AddCamp>
+      },
+      {
+        path: 'registerCamp',
+        element: <ManageRegisteredCamps></ManageRegisteredCamps>
+
+      },
+      {
+        path: 'manageCamp',
+        element: <ManageCamps></ManageCamps>
+
       }
     ]
 
