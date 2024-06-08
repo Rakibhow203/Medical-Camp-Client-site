@@ -1,7 +1,7 @@
 
 import { BiSolidRegistered } from "react-icons/bi";
-import { FaBandcamp } from "react-icons/fa";
-import { GiOrganigram } from "react-icons/gi";
+import { FaBandcamp, FaHome } from "react-icons/fa";
+import { GiArchiveRegister, GiOrganigram } from "react-icons/gi";
 import { MdManageAccounts } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import NavBar from "../Shared/NavBar";
@@ -34,18 +34,39 @@ const Dashboard = () => {
             </li>
             <li className="text-base text-black font-medium " >
               <NavLink to="/dashboard/registerCamp">
-                <BiSolidRegistered></BiSolidRegistered>
+                <GiArchiveRegister></GiArchiveRegister>
                 Manage Register Camp
               </NavLink>
             </li>
 
+            <div className="divider divider-secondary"></div>
+
+
+            <li className="text-lg text-black font-medium "  >
+              <NavLink to="/">
+                <FaHome></FaHome>
+                Home
+              </NavLink>
+            </li>
+            <li className="text-lg text-black font-medium ">
+              <NavLink to="/abailableCamps">
+                <FaBandcamp></FaBandcamp>
+                Abailable Camps
+              </NavLink>
+            </li>
 
           </ul>
 
 
 
         </div>
-        <div>
+
+
+
+
+        {/* dashboard content */}
+
+        <div className="flex-1">
 
           <Outlet></Outlet>
 

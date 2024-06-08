@@ -27,7 +27,6 @@ const CampDetails = () => {
   });
   console.log(user);
 
-
   const camps = useLoaderData()
   // console.log(camps);
   const { id } = useParams();
