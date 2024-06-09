@@ -15,6 +15,7 @@ import OrganizerProfile from "../Component/Dashboard/OrganizerProfile";
 import AddCamp from "../Component/Dashboard/AddCamp";
 import ManageRegisteredCamps from "../Component/Dashboard/ManageRegisteredCamps";
 import ManageCamps from "../Component/Dashboard/ManageCamps";
+import UpdateCamp from "../Component/Dashboard/UpdateCamp";
 
 
 
@@ -95,6 +96,12 @@ export const routers = createBrowserRouter([
       {
         path: 'manageCamp',
         element: <ManageCamps></ManageCamps>
+
+      },
+      {
+        path: 'updated/:id',
+        element: <UpdateCamp></UpdateCamp>,
+        loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
 
       }
     ]

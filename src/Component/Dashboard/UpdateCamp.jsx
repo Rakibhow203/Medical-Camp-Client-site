@@ -1,51 +1,31 @@
-
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
+
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
 import UseAxiosCommon from '../Hook/UseAxiosCommon';
 
-const AddCamp = () => {
-  const axiosCommon = UseAxiosCommon();
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+const UpdateCamp = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
+  const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm();
+  const [loading, setLoading] = useState(true);
+  const axiosCommon = UseAxiosCommon();
+
+  
 
   const onSubmit = async (data) => {
-    console.log(data);
-    try {
-      // Initialize participant count to 0
-      data.participantCount = 0;
+   
+    
+  }
 
-      // Post the form data to the database
-      const response = await axiosCommon.post('/allData', data);
-      console.log('Response:', response);
-
-      if (response.status === 201) {
-        reset();
-        Swal.fire({
-          title: 'Success!',
-          text: 'Camp has been added successfully.',
-          icon: 'success',
-          timer: 2000,
-        });
-        // Reset the form after successful submission
-
-        // Redirect to available camps page
-        navigate('/dashboard/manageCamp');
-      }
-    } catch (error) {
-      console.error('Error adding camp:', error);
-      Swal.fire({
-        title: 'Error!',
-        text: 'There was an error adding the camp. Please try again.',
-        icon: 'error',
-      });
-    }
-  };
+  if (loading) {
+    return <div> <loading></loading>  </div>;
+  }
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Add a New Camp</h1>
+      <h1 className="text-2xl font-bold mb-6">Update Camp</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <label className="block text-sm font-medium">Camp Name</label>
@@ -72,7 +52,7 @@ const AddCamp = () => {
         <div>
           <label className="block text-sm font-medium">Camp Fees</label>
           <input
-            {...register('campFees', {
+            {...register('fees', {
               required: 'Camp fees are required',
               validate: value => value > 0 || 'Fees must be greater than zero'
             })}
@@ -80,7 +60,7 @@ const AddCamp = () => {
             type="number"
             placeholder="Camp Fees"
           />
-          {errors.campFees && <p className="text-red-600">{errors.campFees.message}</p>}
+          {errors.fees && <p className="text-red-600">{errors.fees.message}</p>}
         </div>
 
         <div>
@@ -126,11 +106,11 @@ const AddCamp = () => {
         </div>
 
         <button type="submit" className="px-6 py-2 text-white bg-blue-600 rounded">
-          Add Camp
+          Update Camp
         </button>
       </form>
     </div>
   );
 };
 
-export default AddCamp;
+export default UpdateCamp;
