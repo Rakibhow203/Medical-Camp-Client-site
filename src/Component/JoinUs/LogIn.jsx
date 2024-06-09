@@ -2,19 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import logInIMG from '../../assets/loginlogo2.png';
 import logInPageBg from '../../assets/loginpagebg.jpg';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import useAuth from "../Hook/UseAuth";
-import { useLocation, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+// import useAuth from "../Hook/UseAuth";
+// import { useLocation, useNavigate } from "react-router-dom";
+// import Swal from "sweetalert2";
 import { FaGoogle } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import SocialLogin from "../Hook/SocialLogin";
 
 const LogIn = () => {
   const captchaRef = useRef(null);
   const [disabled, setDisabled] = useState(true);
-  const { signInWithGoogle } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  // const { signInWithGoogle } = useAuth();
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const from = location.state?.from?.pathname || '/';
 
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -29,21 +30,8 @@ const LogIn = () => {
     console.log(result);
   };
 
-  const handleGoogleLogin = () => {
-    signInWithGoogle().then(result => {
-      if (result.user) {
-        navigate('/');
-        Swal.fire({
-          title: 'Success!',
-          text: 'User Google login Successfully',
-          icon: 'success',
-          confirmButtonText: 'Cool',
-        });
-      } else {
-        // Handle login failure
-      }
-    });
-  };
+
+
 
   const handleValidateCaptcha = () => {
     const user_captcha_value = captchaRef.current.value;
@@ -97,14 +85,16 @@ const LogIn = () => {
               <div className="form-control mt-6">
                 <input disabled={disabled} className="btn btn-primary text-xl text-white  bg-gradient-to-r from-orange to-blue-500 hover:from-pink-500 hover:to-yellow-500" type="submit" value="Login" />
               </div>
-              <button onClick={handleGoogleLogin} className="mb-4 text-center justify-center w-full bg-[#dd4b39] hover:bg-blue-600 text-white font-bold py- px-4  rounded h-10 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">
+              {/* <button onClick={handleGoogleLogin} className="mb-4 text-center justify-center w-full bg-[#dd4b39] hover:bg-blue-600 text-white font-bold py- px-4  rounded h-10 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">
                 <div className="lg:flex items-center text-center gap-3 m-auto lg:ml-12 lg:px-4 ">
                   <i>
                     <FaGoogle />
                   </i>
                   <p> Continue with Google</p>
                 </div>
-              </button>
+              </button> */}
+              <p> <SocialLogin></SocialLogin>  </p>
+
             </form>
             <div className="text-center mb-4">
               <p className='text-black font-serif'>Don't have an account? <a href="/register" className="text-yellow-400 hover:text-green-500 font-bold font-serif ">  <span className="">Register</span> </a></p>

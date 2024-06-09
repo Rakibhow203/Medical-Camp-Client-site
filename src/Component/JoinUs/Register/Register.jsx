@@ -8,18 +8,89 @@ import backgroundVideo from '../../../assets/regiterpagebg.mp4';
 import useAuth from "../../Hook/UseAuth"; // Custom authentication hook
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useForm } from "react-hook-form";
+import UseAxiosCommon from "../../Hook/UseAxiosCommon";
 
 const Register = () => {
+  // const [showPassword, setShowPassword] = useState(false);
+  // const { register, handleSubmit, formState: { errors } } = useForm(); // Initialize useForm
+  // const { createUser } = useAuth();
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const redirectPath = location.state?.from || '/';
+
+  // const onSubmit = async (formData) => {
+  //   const { fullName, email, image, password, phone } = formData;
+  //   console.log(formData);
+  //   const uppercaseRegex = /[A-Z]/;
+  //   const lowercaseRegex = /[a-z]/;
+  //   if (
+  //     !uppercaseRegex.test(password) ||
+  //     !lowercaseRegex.test(password) ||
+  //     password.length < 6
+  //   ) {
+
+  //     return;
+  //   }
+  //   fetch('http://localhost:5000/users', {
+  //     method: 'POST',
+  //     headers: {
+  //       'content-type': 'application/json',
+
+  //     },
+  //     body: JSON.stringify(formData)
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       if (data.insertedId) {
+  //         Swal.fire({
+  //           icon: 'error',
+  //           title: 'Password Error',
+  //           text: 'Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long',
+  //         });
+  //       }
+  //     })
+
+  //   try {
+  //     const result = await createUser(email, password, fullName, image, phone);
+
+  //     if (result.user) {
+  //       Swal.fire({
+  //         icon: 'success',
+  //         title: 'Registration Successful',
+  //         text: 'User Created successfully!',
+  //       }).then(() => {
+  //         navigate(redirectPath);
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.error('Registration error:', error);
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Registration Error',
+  //       text: 'Registration failed. Please try again.',
+  //     });
+  //   }
+  // };
+
+
   const [showPassword, setShowPassword] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm(); // Initialize useForm
   const { createUser } = useAuth();
+  const axiosCommon = UseAxiosCommon();
   const navigate = useNavigate();
   const location = useLocation();
-  const redirectPath = location.state?.from || '/';
+  const form = location?.state || '/';
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-  const onSubmit = async (formData) => {
-    const { fullName, email, image, password, phone } = formData;
+  const onSubmit = async data => {
+    const { fullName, email, image, password, phone } = data;
 
+    // Password validation
     const uppercaseRegex = /[A-Z]/;
     const lowercaseRegex = /[a-z]/;
     if (
@@ -29,29 +100,37 @@ const Register = () => {
     ) {
       Swal.fire({
         icon: 'error',
-        title: 'Password Error',
+        title: 'Oops...',
         text: 'Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long',
       });
       return;
     }
 
     try {
-      const result = await createUser(email, password, fullName, image, phone);
+      // Create user
+      const result = await createUser(email, password);
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      // Prepare user info for database
+      const userInfo = { fullName, email, image, phone };
 
-      if (result.user) {
+      // Add user to the database
+      const res = await axiosCommon.post('/users', userInfo);
+
+      if (res.data.insertedId) {
+        reset();
         Swal.fire({
           icon: 'success',
-          title: 'Registration Successful',
-          text: 'User Created successfully!',
-        }).then(() => {
-          navigate(redirectPath);
+          title: 'User created successfully',
+          text: 'Registration successful!',
         });
+        navigate(form);
       }
     } catch (error) {
       console.error('Registration error:', error);
       Swal.fire({
         icon: 'error',
-        title: 'Registration Error',
+        title: 'Oops...',
         text: 'Registration failed. Please try again.',
       });
     }
@@ -163,3 +242,6 @@ const Register = () => {
 };
 
 export default Register;
+
+
+
