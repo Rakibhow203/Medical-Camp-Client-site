@@ -30,27 +30,34 @@ const PopularCamp = () => {
 
 
   return (
-    <div className='popular-camp by-8'>
-      <h2 className='text-2xl font-bold text-center mb-6' >Popular Medical Camps  </h2>
 
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className='popular-camp my-8'>
+      <h2 className='text-3xl font-bold text-center mb-10 text-blue-600'>
+        Popular Medical Camps
+        <span className='block h-1 w-24 bg-blue-600 mt-2 mx-auto'></span>
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {topSixCamps.map(camp => (
-          <div key={camp.name} className="bg-white rounded shadow p-4">
-            <img src={camp.image} alt={camp.campName} className="w-full h-48 object-cover rounded mb-4" />
-            <p className="text-gray-600 mb-2">Fees: {camp.campFees}</p>
-            <p className="text-gray-600 mb-2">Date & Time: {camp.dateTime}</p>
-            <p className="text-gray-600 mb-2">Location: {camp.location}</p>
-            <p className="text-gray-600 mb-2">Healthcare Professional: {camp.healthcareProfessionalName}</p>
-            <p className="text-gray-600 mb-2">Participants: {camp.participantCount}</p>
-            <Link to={`/camp-details/${camp._id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <div key={camp.name} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+            <img src={camp.image} alt={camp.campName} className="w-full h-56 object-cover rounded-t-lg mb-4" />
+            <div className="text-gray-700 space-y-2">
+              <p className="font-semibold text-lg">Camp Name: <span className="font-normal">{camp.campName}</span></p>
+              <p className="font-semibold text-lg">Fees: <span className="font-normal">{camp.campFees}</span></p>
+              <p className="font-semibold text-lg">Date & Time: <span className="font-normal">{camp.dateTime}</span></p>
+              <p className="font-semibold text-lg">Location: <span className="font-normal">{camp.location}</span></p>
+              <p className="font-semibold text-lg">Healthcare Professional: <span className="font-normal">{camp.healthcareProfessionalName}</span></p>
+              <p className="font-semibold text-lg">Participants: <span className="font-normal">{camp.participantCount}</span></p>
+            </div>
+            <Link to={`/camp-details/${camp._id}`} className="mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300">
               View Details
             </Link>
           </div>
         ))}
       </div>
-
     </div>
+
   );
 };
 

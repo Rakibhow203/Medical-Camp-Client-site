@@ -3,56 +3,69 @@ import logo from '../../assets/logo.png'
 const Footer = () => {
   return (
     <div>
-      <footer className="px-4 divide-y dark:bg-gray-100 dark:text-gray-800">
-        <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-          <div className="lg:w-1/3">
-            <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
-              <div className="flex items-center justify-center w-16 h-16 rounded-full dark:bg-violet-600">
-                <img src={logo} alt="" className='rounded-full' />
+      <footer className="bg-gray-100 text-gray-800 px-4 divide-y">
+        <div className="container mx-auto py-10 flex flex-col space-y-8 lg:flex-row lg:space-y-0 justify-between">
+
+          {/* Logo and Branding */}
+          <div className="lg:w-1/3 flex flex-col items-center lg:items-start">
+            <a href="#" className="flex items-center space-x-3">
+              <div className="w-16 h-16 rounded-full bg-violet-600 flex items-center justify-center">
+                <img src={logo} alt="CampAid Logo" className="w-full h-full rounded-full object-cover" />
               </div>
-              <span className="self-center text-2xl font-semibold">CampAid</span>
+              <span className="text-2xl font-semibold">CampAid</span>
             </a>
+            <p className="mt-4 text-sm text-center lg:text-left">
+              Bringing medical camps closer to you. Join us to improve healthcare access for everyone.
+            </p>
           </div>
-          <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
-            <div className="space-y-3">
-              <h3 className="tracking-wide uppercase dark:text-gray-900">Product</h3>
-              <ul className="space-y-1">
+
+          {/* Navigation Links */}
+          <div className="grid grid-cols-2 gap-8 lg:w-2/3 sm:grid-cols-4">
+
+            {/* Product Section */}
+            <div>
+              <h3 className="text-gray-900 font-bold uppercase mb-3">Product</h3>
+              <ul className="space-y-2">
                 <li>
-                  <a rel="noopener noreferrer" href="#">Features</a>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">Features</a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Integrations</a>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">Integrations</a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Pricing</a>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">Pricing</a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">FAQ</a>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="tracking-wide uppercase dark:text-gray-900">Company</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">Privacy</a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">FAQ</a>
                 </li>
               </ul>
             </div>
-            <div className="space-y-3">
-              <h3 className="uppercase dark:text-gray-900">Developers</h3>
-              <ul className="space-y-1">
+
+            {/* Company Section */}
+            <div>
+              <h3 className="text-gray-900 font-bold uppercase mb-3">Company</h3>
+              <ul className="space-y-2">
                 <li>
-                  <a rel="noopener noreferrer" href="#">Public API</a>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">Privacy</a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Documentation</a>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">Terms of Service</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Developers Section */}
+            <div>
+              <h3 className="text-gray-900 font-bold uppercase mb-3">Developers</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">Public API</a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Guides</a>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">Documentation</a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-violet-600 transition-colors duration-300">Guides</a>
                 </li>
               </ul>
             </div>
@@ -81,6 +94,9 @@ const Footer = () => {
         <div className="py-6 text-sm text-center dark:text-gray-600">© 1968 Company Co. All rights reserved.</div>
       </footer>
     </div>
+
+
+
   );
 };
 

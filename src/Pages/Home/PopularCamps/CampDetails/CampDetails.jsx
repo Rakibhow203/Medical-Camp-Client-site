@@ -104,74 +104,122 @@ const CampDetails = () => {
 
   }
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">{campName}</h1>
-      <img src={image} className="w-full h-60 object-cover rounded-lg mb-4" alt={campName} />
-      <p className="text-xl font-semibold mb-2">Price: {campFees}</p>
-      <p className="mb-2"><strong>Date:</strong> {dateTime}</p>
-      <p className="mb-2"><strong>Location:</strong> {location}</p>
-      <p className="mb-2"><strong>Professional:</strong> {healthcareProfessionalName}</p>
-      <p className="mb-2"><strong>Participant Count:</strong> {participantCount}</p>
-      <p className="mb-4"><strong>Description:</strong> {description}</p>
-      <button onClick={() => setShowModal(true)} className="bg-blue-500 text-white py-2 px-4 rounded">
+
+    <div className="max-w-2xl mx-auto p-6 bg-gray-100 rounded-lg shadow-lg">
+      <h1 className="text-4xl font-extrabold text-gray-800 mb-6 text-center">{campName}</h1>
+      <img src={image} className="w-full h-80 object-cover rounded-lg mb-6" alt={campName} />
+      <div className="space-y-4 text-lg text-gray-700">
+        <p><span className="font-semibold">Price:</span> {campFees}</p>
+        <p><span className="font-semibold">Date & Time:</span> {dateTime}</p>
+        <p><span className="font-semibold">Location:</span> {location}</p>
+        <p><span className="font-semibold">Professional:</span> {healthcareProfessionalName}</p>
+        <p><span className="font-semibold">Participant Count:</span> {participantCount}</p>
+        <p><span className="font-semibold">Description:</span> {description}</p>
+      </div>
+      <button
+        onClick={() => setShowModal(true)}
+        className="mt-6 w-full bg-blue-600 hover:bg-blue-800 text-white py-3 px-5 rounded-lg font-bold text-lg transition-colors duration-300"
+      >
         Join Camp
       </button>
 
 
+
+
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded shadow-lg w-full max-w-lg">
-            <h2 className="text-2xl font-bold mb-4">Join Camp</h2>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Join Camp</h2>
             <form onSubmit={addPerticipent}>
               <div className="mb-4">
                 <label className="block text-gray-700">Camp Name</label>
                 <input
                   name="name"
-                  type="text" value={campName} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
+                  type="text"
+                  value={campName}
+                  readOnly
+                  className="mt-2 block w-full text-orange-400 font-semibold bg-gray-200 rounded p-2"
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Price</label>
                 <input
                   name="campFees"
-                  type="text" value={campFees} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
+                  type="text"
+                  value={campFees}
+                  readOnly
+                  className="mt-2 block w-full text-orange-400 font-semibold bg-gray-200 rounded p-2"
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Location</label>
                 <input
                   name="location"
-                  type="text" value={location} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
+                  type="text"
+                  value={location}
+                  readOnly
+                  className="mt-2 block w-full text-orange-400 font-semibold bg-gray-200 rounded p-2"
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Professional</label>
                 <input
                   name="health"
-                  type="text" value={healthcareProfessionalName} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
+                  type="text"
+                  value={healthcareProfessionalName}
+                  readOnly
+                  className="mt-2 block w-full text-orange-400 font-semibold bg-gray-200 rounded p-2"
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Participant Name</label>
                 <input
-
-                  type="text" value={loggedInUser.name} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
+                  type="text"
+                  value={loggedInUser.name}
+                  readOnly
+                  className="mt-2 block w-full text-orange-400 font-semibold bg-gray-200 rounded p-2"
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Participant Email</label>
                 <input
-
-                  type="email" value={loggedInUser.email} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
+                  type="email"
+                  value={loggedInUser.email}
+                  readOnly
+                  className="mt-2 block w-full text-orange-400 font-semibold bg-gray-200 rounded p-2"
+                />
               </div>
               <div className="mb-4">
-                <label
-
-                  className="block text-gray-700">Age</label>
-                <input type="number" name="age" value={participantInfo.age} onChange={handleInputChange} className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" required />
+                <label className="block text-gray-700">Age</label>
+                <input
+                  type="number"
+                  name="age"
+                  value={participantInfo.age}
+                  onChange={handleInputChange}
+                  className="mt-2 block w-full text-gray-700 font-semibold bg-gray-100 rounded p-2"
+                  required
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Phone Number</label>
-                <input type="tel" name="phone" value={participantInfo.phone} onChange={handleInputChange} className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" required />
+                <input
+                  type="tel"
+                  name="phone"
+                  value={participantInfo.phone}
+                  onChange={handleInputChange}
+                  className="mt-2 block w-full text-gray-700 font-semibold bg-gray-100 rounded p-2"
+                  required
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Gender</label>
-                <select name="gender" value={participantInfo.gender} onChange={handleInputChange} className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" required>
+                <select
+                  name="gender"
+                  value={participantInfo.gender}
+                  onChange={handleInputChange}
+                  className="mt-2 block w-full text-gray-700 font-semibold bg-gray-100 rounded p-2"
+                  required
+                >
                   <option value="" disabled>Select Gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -180,21 +228,37 @@ const CampDetails = () => {
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Emergency Contact</label>
-                <input type="tel" name="emergencyContact" value={participantInfo.emergencyContact} onChange={handleInputChange} className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" required />
-              </div>
-              <div className="flex justify-end gap-4">
-                <button type="button" onClick={() => setShowModal(false)} className="px-4 w-full py-2 mt-4 rounded hover:bg-[#FF0000] hover:text-white  bg-orange-300 duration-200 text-red-500 cursor-pointer font-bold">Cancel</button>
                 <input
-                  className="px-4 w-full py-2 mt-4 rounded hover:bg-green-500  bg-[#ffd5496b] duration-200 text-green-600 hover:text-white cursor-pointer font-bold"
+                  type="tel"
+                  name="emergencyContact"
+                  value={participantInfo.emergencyContact}
+                  onChange={handleInputChange}
+                  className="mt-2 block w-full text-gray-700 font-semibold bg-gray-100 rounded p-2"
+                  required
+                />
+              </div>
+              <div className="flex justify-between gap-4">
+                <button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  className="w-full py-2 mt-4 rounded bg-red-500 hover:bg-red-600 text-white font-bold transition-colors duration-300"
+                >
+                  Cancel
+                </button>
+                <input
                   type="submit"
                   value="Join Camp"
+                  className="w-full py-2 mt-4 rounded bg-green-500 hover:bg-green-600 text-white font-bold transition-colors duration-300 cursor-pointer"
                 />
               </div>
             </form>
           </div>
         </div>
       )}
+
     </div>
+
+
   );
 };
 export default CampDetails;
