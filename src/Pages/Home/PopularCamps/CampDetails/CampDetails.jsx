@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Loading from "../../../../Loding/Loading";
-import UseAxiosCommon from "../../../../Component/Hook/UseAxiosCommon";
+
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import useAuth from "../../../../Component/Hook/UseAuth";
@@ -127,51 +127,51 @@ const CampDetails = () => {
                 <label className="block text-gray-700">Camp Name</label>
                 <input
                   name="name"
-                  type="text" value={campName} readOnly className="mt-1 block w-full" />
+                  type="text" value={campName} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Price</label>
                 <input
                   name="campFees"
-                  type="text" value={campFees} readOnly className="mt-1 block w-full" />
+                  type="text" value={campFees} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Location</label>
                 <input
                   name="location"
-                  type="text" value={location} readOnly className="mt-1 block w-full" />
+                  type="text" value={location} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Professional</label>
                 <input
                   name="health"
-                  type="text" value={healthcareProfessionalName} readOnly className="mt-1 block w-full" />
+                  type="text" value={healthcareProfessionalName} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Participant Name</label>
                 <input
 
-                  type="text" value={loggedInUser.name} readOnly className="mt-1 block w-full" />
+                  type="text" value={loggedInUser.name} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Participant Email</label>
                 <input
 
-                  type="email" value={loggedInUser.email} readOnly className="mt-1 block w-full" />
+                  type="email" value={loggedInUser.email} readOnly className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" />
               </div>
               <div className="mb-4">
                 <label
 
                   className="block text-gray-700">Age</label>
-                <input type="number" name="age" value={participantInfo.age} onChange={handleInputChange} className="mt-1 block w-full" required />
+                <input type="number" name="age" value={participantInfo.age} onChange={handleInputChange} className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" required />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Phone Number</label>
-                <input type="tel" name="phone" value={participantInfo.phone} onChange={handleInputChange} className="mt-1 block w-full" required />
+                <input type="tel" name="phone" value={participantInfo.phone} onChange={handleInputChange} className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" required />
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Gender</label>
-                <select name="gender" value={participantInfo.gender} onChange={handleInputChange} className="mt-1 block w-full" required>
+                <select name="gender" value={participantInfo.gender} onChange={handleInputChange} className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" required>
                   <option value="" disabled>Select Gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -180,7 +180,7 @@ const CampDetails = () => {
               </div>
               <div className="mb-4">
                 <label className="block text-gray-700">Emergency Contact</label>
-                <input type="tel" name="emergencyContact" value={participantInfo.emergencyContact} onChange={handleInputChange} className="mt-1 block w-full" required />
+                <input type="tel" name="emergencyContact" value={participantInfo.emergencyContact} onChange={handleInputChange} className="mt-1 block w-full text-orange-400 font-bold backdrop-brightness-100 bg-slate-600" required />
               </div>
               <div className="flex justify-end gap-4">
                 <button type="button" onClick={() => setShowModal(false)} className="px-4 w-full py-2 mt-4 rounded hover:bg-[#FF0000] hover:text-white  bg-orange-300 duration-200 text-red-500 cursor-pointer font-bold">Cancel</button>

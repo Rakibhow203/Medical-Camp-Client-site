@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuth from "../Hook/UseAuth";
+import Loading from "../../Loding/Loading";
 
 const OrganizerProfile = () => {
   const { user } = useAuth();
+  const [loading, setLoading] = useState(true)
   const [organizer, setOrganizer] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
@@ -27,6 +29,7 @@ const OrganizerProfile = () => {
       } catch (error) {
         console.error('Error fetching profile', error);
       }
+      setLoading(false)
     };
 
     fetchProfile();
@@ -68,7 +71,7 @@ const OrganizerProfile = () => {
     }
   };
 
-  if (!organizer) return <div>Loading...</div>;
+  if (loading) return <Loading></Loading>
 
 
   return (

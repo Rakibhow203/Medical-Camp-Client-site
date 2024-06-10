@@ -13,9 +13,11 @@ import Dashboard from "../Component/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import OrganizerProfile from "../Component/Dashboard/OrganizerProfile";
 import AddCamp from "../Component/Dashboard/AddCamp";
-import ManageRegisteredCamps from "../Component/Dashboard/ManageRegisteredCamps";
 import ManageCamps from "../Component/Dashboard/ManageCamps";
 import UpdateCamp from "../Component/Dashboard/UpdateCamp";
+import ManageCampsRegister from "../Component/Dashboard/ManageCampsRegister"
+import MyRequestCamps from "../Component/AvailableCamps/MyRequestCamps";
+
 
 
 
@@ -60,7 +62,12 @@ export const routers = createBrowserRouter([
         </PrivateRoute>
 
       },
+      {
 
+        path: 'myRequestCamp',
+        element: <MyRequestCamps></MyRequestCamps>
+
+      }
 
       // private routes
 
@@ -89,8 +96,8 @@ export const routers = createBrowserRouter([
         element: <AddCamp></AddCamp>
       },
       {
-        path: 'registerCamp',
-        element: <ManageRegisteredCamps></ManageRegisteredCamps>
+        path: 'ManageRegisterCamp',
+        element: <ManageCampsRegister></ManageCampsRegister>
 
       },
       {
@@ -101,9 +108,18 @@ export const routers = createBrowserRouter([
       {
         path: 'updated/:id',
         element: <UpdateCamp></UpdateCamp>,
+        // loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
         loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
 
-      }
+
+
+      },
+
+
+
+
+
+
     ]
 
   }

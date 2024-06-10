@@ -6,6 +6,7 @@ import UseAxiosCommon from '../Hook/UseAxiosCommon';
 import { MdDeleteSweep } from 'react-icons/md';
 import { FaPenToSquare } from 'react-icons/fa6';
 import useData from '../Hook/useData';
+import Loading from '../../Loding/Loading';
 
 const ManageCamps = () => {
   const axiosCommon = UseAxiosCommon();
@@ -43,7 +44,7 @@ const ManageCamps = () => {
     });
   };
 
-
+  if (loading) return <Loading></Loading>
 
 
 
@@ -66,15 +67,15 @@ const ManageCamps = () => {
           {
             camps.map((camp, index) =>
 
-              <tr key={camp._id} className="bg-base-200">
+              <tr key={camp?._id} className="bg-base-200">
                 <th>{index + 1}</th>
-                <td>{camp.campName
+                <td>{camp?.campName
                 }</td>
-                <td>{camp.dateTime}</td>
-                <td>{camp.location}</td>
-                <td>{camp.healthcareProfessionalName}</td>
+                <td>{camp?.dateTime}</td>
+                <td>{camp?.location}</td>
+                <td>{camp?.healthcareProfessionalName}</td>
                 <td>
-                  <Link to={`/dashboard/updated/${camp._id}`}>
+                  <Link to={`/dashboard/updated/${camp?._id}`}>
 
                     <button
 

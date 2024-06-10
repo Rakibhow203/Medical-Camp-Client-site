@@ -1,10 +1,12 @@
 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Loading from '../../../Loding/Loading';
+
 import useAuth from '../../../Component/Hook/UseAuth';
 import UseAxiosCommon from '../../../Component/Hook/UseAxiosCommon';
 import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
+import Loading from '../../../Loding/Loading';
 
 
 
@@ -12,9 +14,9 @@ import { useQuery } from '@tanstack/react-query';
 
 const PopularCamp = () => {
   const useAxiosCommon = UseAxiosCommon();
-  const { Loading } = useAuth();
 
-  const { data: topCamps = [] } = useQuery({
+
+  const { data: topCamps = [], isPending: loading } = useQuery({
     queryKey: ['camp'],
     queryFn: async () => {
       const res = await useAxiosCommon.get('allData')
@@ -24,9 +26,9 @@ const PopularCamp = () => {
   const topSixCamps = topCamps.slice(0, 6);
 
 
+  if (loading) return <Loading></Loading>
 
 
-  if (Loading) return <div>  <Loading></Loading> </div >;
   return (
     <div className='popular-camp by-8'>
       <h2 className='text-2xl font-bold text-center mb-6' >Popular Medical Camps  </h2>

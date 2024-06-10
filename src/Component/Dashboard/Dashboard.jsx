@@ -40,7 +40,7 @@ const Dashboard = () => {
 
               </li>
               <li className="text-base text-black font-medium " >
-                <NavLink to="/dashboard/registerCamp">
+                <NavLink to="/dashboard/ManageRegisterCamp">
                   <GiArchiveRegister></GiArchiveRegister>
                   Manage Register Camp
                 </NavLink>
