@@ -11,7 +11,7 @@ const UserHome = () => {
         <span>Hi, Welcome</span>
         {
 
-          User?.displayName ? user.displayName : 'Back'
+          user?.displayName ? user.displayName : 'Back'
         }
 
       </h2>
