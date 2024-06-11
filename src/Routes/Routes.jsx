@@ -17,6 +17,11 @@ import ManageCamps from "../Component/Dashboard/ManageCamps";
 import UpdateCamp from "../Component/Dashboard/UpdateCamp";
 import ManageCampsRegister from "../Component/Dashboard/ManageCampsRegister"
 import MyRequestCamps from "../Component/AvailableCamps/MyRequestCamps";
+import Pay from "../Component/Dashboard/Pay";
+import ParticipantAnalytics from "../Component/Dashboard/ParticipantAnalytics";
+import ParticipantPaymentHistory from "../Component/Dashboard/ParticipantPaymentHistory";
+import ParticipantProfile from "../Component/Dashboard/ParticipantProfile";
+import ParticipantRegisteredCamps from "../Component/Dashboard/ParticipantRegisteredCamps";
 
 
 
@@ -67,6 +72,13 @@ export const routers = createBrowserRouter([
         path: 'myRequestCamp',
         element: <MyRequestCamps></MyRequestCamps>
 
+      },
+
+      {
+
+        path: 'payNow',
+        element: <Pay></Pay>
+
       }
 
       // private routes
@@ -115,8 +127,27 @@ export const routers = createBrowserRouter([
 
       },
 
+      // participant Route
+      {
+        path: 'analytics',
+        element: <ParticipantAnalytics></ParticipantAnalytics>
 
+      },
+      {
+        path: 'payment',
+        element: <ParticipantPaymentHistory></ParticipantPaymentHistory>
 
+      },
+      {
+        path: 'profile',
+        element: <ParticipantProfile></ParticipantProfile>
+
+      },
+      {
+        path: 'ParticipantRegisteredCamps',
+        element: <ParticipantRegisteredCamps></ParticipantRegisteredCamps>
+
+      },
 
 
 

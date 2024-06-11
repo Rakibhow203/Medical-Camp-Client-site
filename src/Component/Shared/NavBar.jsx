@@ -60,7 +60,7 @@ const NavBar = () => {
               <NavLink to='/AvailableCamps'>Available Camps</NavLink>
             </li>
             <li className='text-black  hover:bg-orange-100 rounded-lg'>
-              <NavLink to='/myRequestCamp'>My Register Camp
+              <NavLink to='/myRequestCamp'>My Request Camp
                 <MdShoppingCart
                 />{carts.length}
               </NavLink>

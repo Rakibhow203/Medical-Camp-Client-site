@@ -1,54 +1,99 @@
 
 
 import { FaBandcamp, FaHome } from "react-icons/fa";
-import { GiArchiveRegister, GiOrganigram } from "react-icons/gi";
-import { MdManageAccounts } from "react-icons/md";
+import { GiArchiveRegister, GiEgyptianProfile, GiOrganigram } from "react-icons/gi";
+import { MdAppRegistration, MdManageAccounts } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
-import NavBar from "../Shared/NavBar";
+
 import { Helmet } from "react-helmet-async";
-import DashboardBanner from "./DashboardBanner";
+
+import AdminDashboardBanner from "./AdminDashboardBanner";
+import { IoIosAnalytics } from "react-icons/io";
+import { SiGoogleanalytics } from "react-icons/si";
 
 const Dashboard = () => {
+  const isAdmin = false
   return (
     <>
-
       <Helmet>
 
         <title> CampAid || Dashboard </title>
       </Helmet>
       <div>
-        <NavBar></NavBar>
 
 
-        <DashboardBanner></DashboardBanner>
+
+        <AdminDashboardBanner></AdminDashboardBanner>
         <div className="lg:flex gap-8">
 
           <div className="mb-5 w-64 h-[90vh] bg-orange-400  rounded-lg">
 
             <ul className="menu space-y-3">
-              <li className="text-lg text-black font-medium ">
-                <NavLink to="/dashboard/organizer">
-                  <GiOrganigram />   Organizer Profile
-                </NavLink>
-              </li>
-              <li className="text-lg text-black font-medium " >
-                <NavLink to="/dashboard/addCamp">
-                  <FaBandcamp></FaBandcamp> Add A Camp
-                </NavLink>
-              </li>
-              <li className="text-lg text-black font-medium " >
-                <NavLink to="/dashboard/manageCamp">
-                  <MdManageAccounts></MdManageAccounts>
-                  Manage Camp
-                </NavLink>
 
-              </li>
-              <li className="text-base text-black font-medium " >
-                <NavLink to="/dashboard/ManageRegisterCamp">
-                  <GiArchiveRegister></GiArchiveRegister>
-                  Manage Register Camp
-                </NavLink>
-              </li>
+              {/* Admin Role */}
+
+              {
+                isAdmin ? <>
+                  <li className="text-lg text-black font-medium ">
+                    <NavLink to="/dashboard/organizer">
+                      <GiOrganigram />   Organizer Profile
+                    </NavLink>
+                  </li>
+                  <li className="text-lg text-black font-medium " >
+                    <NavLink to="/dashboard/addCamp">
+                      <FaBandcamp></FaBandcamp> Add A Camp
+                    </NavLink>
+                  </li>
+                  <li className="text-lg text-black font-medium " >
+                    <NavLink to="/dashboard/manageCamp">
+                      <MdManageAccounts></MdManageAccounts>
+                      Manage Camp
+                    </NavLink>
+
+                  </li>
+                  <li className="text-base text-black font-medium " >
+                    <NavLink to="/dashboard/ManageRegisterCamp">
+                      <GiArchiveRegister></GiArchiveRegister>
+                      Manage Register Camp
+                    </NavLink>
+                  </li>
+                </> :
+
+                  // Participant Role
+
+                  <>
+                    <li className="text-lg text-black font-medium ">
+                      <NavLink to="/dashboard/analytics">
+                        <SiGoogleanalytics /> Analytics
+                      </NavLink>
+                    </li>
+                    <li className="text-lg text-black font-medium " >
+                      <NavLink to="/dashboard/profile">
+                        <GiEgyptianProfile /> Participant Profile
+                      </NavLink>
+                    </li>
+                    <li className="text-lg text-black font-medium " >
+                      <NavLink to="/dashboard/ParticipantRegisteredCamps">
+                        <MdManageAccounts></MdManageAccounts>
+                        Registered Camps
+                      </NavLink>
+
+                    </li>
+                    <li className="text-base text-black font-medium " >
+                      <NavLink to="/dashboard/payment">
+                        <MdAppRegistration ></MdAppRegistration>
+                        Payment History
+                      </NavLink>
+                    </li>
+
+
+
+
+                  </>
+              }
+
+
+
 
               <div className="divider divider-secondary"></div>
 

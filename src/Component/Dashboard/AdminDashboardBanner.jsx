@@ -1,6 +1,6 @@
 import useAuth from "../Hook/UseAuth";
 
-const DashboardBanner = () => {
+const AdminDashboardBanner = () => {
   const { user } = useAuth();
 
   return (
@@ -45,4 +45,4 @@ const DashboardBanner = () => {
   );
 };
 
-export default DashboardBanner;
+export default AdminDashboardBanner;
