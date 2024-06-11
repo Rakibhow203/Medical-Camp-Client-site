@@ -4,12 +4,12 @@ import { FaBandcamp, FaHome } from "react-icons/fa";
 import { GiArchiveRegister, GiEgyptianProfile, GiOrganigram } from "react-icons/gi";
 import { MdAppRegistration, MdManageAccounts } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
-
 import { Helmet } from "react-helmet-async";
-
 import AdminDashboardBanner from "./AdminDashboardBanner";
-import { IoIosAnalytics } from "react-icons/io";
 import { SiGoogleanalytics } from "react-icons/si";
+
+
+
 
 const Dashboard = () => {
   const isAdmin = false
@@ -59,6 +59,11 @@ const Dashboard = () => {
                   </li>
                 </> :
 
+
+
+
+
+
                   // Participant Role
 
                   <>
@@ -85,10 +90,6 @@ const Dashboard = () => {
                         Payment History
                       </NavLink>
                     </li>
-
-
-
-
                   </>
               }
 
