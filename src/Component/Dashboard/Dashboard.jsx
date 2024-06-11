@@ -1,18 +1,19 @@
 
 
-import { FaBandcamp, FaHome } from "react-icons/fa";
+import { FaBandcamp, FaHome, FaUserAlt } from "react-icons/fa";
 import { GiArchiveRegister, GiEgyptianProfile, GiOrganigram } from "react-icons/gi";
 import { MdAppRegistration, MdManageAccounts } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import AdminDashboardBanner from "./AdminDashboardBanner";
 import { SiGoogleanalytics } from "react-icons/si";
+import { FaUser } from "react-icons/fa6";
 
 
 
 
 const Dashboard = () => {
-  const isAdmin = false
+  const isAdmin = true
   return (
     <>
       <Helmet>
@@ -34,6 +35,13 @@ const Dashboard = () => {
 
               {
                 isAdmin ? <>
+                  <li>
+                    <NavLink to="/dashboard/adminHome">
+                      <FaHome></FaHome> Admin Home
+                    </NavLink>
+
+                  </li>
+
                   <li className="text-lg text-black font-medium ">
                     <NavLink to="/dashboard/organizer">
                       <GiOrganigram />   Organizer Profile
@@ -57,6 +65,12 @@ const Dashboard = () => {
                       Manage Register Camp
                     </NavLink>
                   </li>
+                  <li className="text-base text-black font-medium " >
+                    <NavLink to="/dashboard/allUsers">
+                      <FaUserAlt></FaUserAlt>
+                      All Users
+                    </NavLink>
+                  </li>
                 </> :
 
 
@@ -67,6 +81,14 @@ const Dashboard = () => {
                   // Participant Role
 
                   <>
+
+                    <li>
+                      <NavLink to="/dashboard/userHome">
+                        <FaHome></FaHome> User Home
+                      </NavLink>
+
+                    </li>
+
                     <li className="text-lg text-black font-medium ">
                       <NavLink to="/dashboard/analytics">
                         <SiGoogleanalytics /> Analytics

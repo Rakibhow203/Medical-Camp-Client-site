@@ -22,6 +22,9 @@ import ParticipantAnalytics from "../Component/Dashboard/ParticipantAnalytics";
 import ParticipantPaymentHistory from "../Component/Dashboard/ParticipantPaymentHistory";
 import ParticipantProfile from "../Component/Dashboard/ParticipantProfile";
 import ParticipantRegisteredCamps from "../Component/Dashboard/ParticipantRegisteredCamps";
+import UserHome from "../Component/Dashboard/UserHome/UserHome";
+import AdminHome from "../Component/Dashboard/AdminHome/AdminHome";
+import AllUsers from "../Component/Dashboard/AllUsers";
 
 
 
@@ -97,6 +100,13 @@ export const routers = createBrowserRouter([
     element: <PrivateRoute> <Dashboard></Dashboard>,</PrivateRoute>,
     errorElement: <Error></Error>,
     children: [
+
+      {
+        path: 'adminHome',
+        element: <AdminHome></AdminHome>
+
+      },
+
       {
         path: 'organizer',
         element: <OrganizerProfile></OrganizerProfile>
@@ -123,11 +133,26 @@ export const routers = createBrowserRouter([
         // loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
         loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
 
+      },
+
+      {
+        path: 'allUsers',
+        element: <AllUsers></AllUsers>
+
+      },
+
+
+
+      // -------------------participant Route-------------------------------------------
+
+      {
+        path: 'userHome',
+        element: <UserHome></UserHome>
 
 
       },
 
-      // participant Route
+
       {
         path: 'analytics',
         element: <ParticipantAnalytics></ParticipantAnalytics>
