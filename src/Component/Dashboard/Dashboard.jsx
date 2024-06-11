@@ -6,6 +6,7 @@ import { MdManageAccounts } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import NavBar from "../Shared/NavBar";
 import { Helmet } from "react-helmet-async";
+import DashboardBanner from "./DashboardBanner";
 
 const Dashboard = () => {
   return (
@@ -17,6 +18,9 @@ const Dashboard = () => {
       </Helmet>
       <div>
         <NavBar></NavBar>
+
+
+        <DashboardBanner></DashboardBanner>
         <div className="lg:flex gap-8">
 
           <div className="mb-5 w-64 h-[90vh] bg-orange-400  rounded-lg">

@@ -1,35 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
+
 import useAuth from "../Hook/UseAuth";
-import UseAxiosCommon from "../Hook/UseAxiosCommon";
-import Banner from "../../Pages/Home/Banner/Banner";
+
 import RequestCampBanner from "../../Pages/Home/RequestCampBanner/RequestCampBanner";
+import CartUse from "../Hook/CartUse";
 
 const MyRequestCamps = () => {
   const { user } = useAuth();
+  const [carts] = CartUse()
 
-  const axiosCommon = UseAxiosCommon();
-  const {
-    data: camps = [],
-    isPending: isLoading,
-
-  } = useQuery({
-    queryKey: ['camp'],
-    queryFn: async () => {
-      const res = await axiosCommon.get('/allParticipant');
-      return res.data;
-    },
-  });
-
-
-  const handleConfirm = async (id) => {
-    try {
-      // Send request to backend to update confirmation status
-      await axiosCommon.patch(`/confirm/${id}`, { confirmationStatus: 'Confirmed' });
-      refetch(); // Refetch data to reflect changes
-    } catch (error) {
-      console.error('Error confirming payment:', error);
-    }
-  };
   return (
 
     <>
@@ -50,7 +28,7 @@ const MyRequestCamps = () => {
               </tr>
             </thead>
             <tbody>
-              {camps.map((camp, index) => (
+              {carts.map((camp, index) => (
                 <tr key={camp?._id} className={`hover:bg-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                   <td className="border px-4 py-2 text-center">{index + 1}</td>
                   <td className="border px-4 py-2 text-center">{camp?.name}</td>

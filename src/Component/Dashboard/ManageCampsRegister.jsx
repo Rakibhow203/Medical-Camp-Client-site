@@ -18,7 +18,7 @@ const ManageCampsRegister = () => {
   } = useQuery({
     queryKey: ['camp'],
     queryFn: async () => {
-      const res = await axiosCommon.get('/allParticipant');
+      const res = await axiosCommon.get('/allParticipantDash');
       return res.data;
     },
   });

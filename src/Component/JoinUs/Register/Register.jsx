@@ -137,7 +137,109 @@ const Register = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 my-8">
+    // <div className="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 my-8">
+    //   <video
+    //     className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-lg"
+    //     src={backgroundVideo}
+    //     autoPlay
+    //     loop
+    //     muted
+    //   />
+    //   <div className="relative z-10 bg-opacity-10 bg-blue-400 p-10 rounded-lg shadow-lg max-w-md w-full">
+    //     <h2 className="text-center text-4xl font-extrabold text-yellow-600 mb-6">Register now!!</h2>
+    //     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+    //       <div className="form-control">
+    //         <label className="label">
+    //           <span className="label-text font-bold bg-blue-500 rounded text-black">User Name</span>
+    //         </label>
+    //         <input
+    //           type="text"
+    //           {...register("fullName", { required: true })}
+    //           placeholder="Enter Your Name"
+    //           className="input text-black font-bold"
+    //         />
+    //         {errors.fullName && <span className="text-red-500">This field is required</span>}
+    //       </div>
+    //       <div className="form-control">
+    //         <label className="label">
+    //           <span className="label-text bg-blue-300 rounded text-black font-bold">Your Email</span>
+    //         </label>
+    //         <input
+    //           type="email"
+    //           {...register("email", { required: true })}
+    //           placeholder="email"
+    //           className="input text-black font-bold input-bordered rounded w-full p-2 items-center"
+    //         />
+    //         {errors.email && <span className="text-red-500">This field is required</span>}
+    //       </div>
+    //       <div className="form-control">
+    //         <label className="label">
+    //           <span className="label-text bg-blue-300 rounded text-black font-bold">Image URL</span>
+    //         </label>
+    //         <input
+    //           type="text"
+    //           {...register("image")}
+    //           placeholder="Image URL"
+    //           className="input text-black font-bold input-bordered p-2 w-full rounded items-center"
+    //         />
+    //       </div>
+    //       <div className="form-control">
+    //         <label className="label">
+    //           <span className="label-text bg-blue-300 rounded text-black font-bold">Phone Number</span>
+    //         </label>
+    //         <input
+    //           type="tel"
+    //           {...register("phone", { required: true })}
+    //           placeholder="Phone Number"
+    //           className="input text-black font-bold input-bordered p-2 w-full rounded items-center"
+    //         />
+    //         {errors.phone && <span className="text-red-500">This field is required</span>}
+    //       </div>
+    //       <div className="form-control">
+    //         <div className="relative">
+    //           <label className="label">
+    //             <span className="label-text bg-blue-300 rounded text-black font-bold">Password</span>
+    //           </label>
+    //           <input
+    //             type={showPassword ? 'text' : 'password'}
+    //             {...register("password", { required: true })}
+    //             placeholder="password"
+    //             className="input text-black font-bold input-bordered w-full p-2 rounded items-center"
+    //           />
+    //           <span
+    //             className="absolute mt-4 -ml-5 cursor-pointer"
+    //             onClick={() => setShowPassword(!showPassword)}
+    //           >
+    //             {showPassword ? <FaEyeSlash /> : <FaEye />}
+    //           </span>
+    //         </div>
+    //         <label className="label">
+    //           <a href="#" className="label-text-alt link link-hover bg-blue-500 rounded text-black font-bold">
+    //             Forgot password?
+    //           </a>
+    //         </label>
+    //         <p className="font-bold text-center">
+    //           Have an Account?
+    //           <NavLink to="/login" className="bg-blue-500 rounded text-black font-bold ml-3">
+    //             Login
+    //           </NavLink>
+    //         </p>
+    //       </div>
+    //       <div className="text-center">
+    //         <button className="btn btn-outline w-full btn-warning font-bold bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">
+    //           Register
+    //         </button>
+    //       </div>
+    //     </form>
+    //     <div className="text-center p-2">
+    //       <p className="text-black font-serif bg-blue-500 rounded font-bold">
+    //         Already have an account? <a href="/login" className="text-yellow-400 hover:text-orange-500 font-bold font-serif">Login</a>
+    //       </p>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-lg"
         src={backgroundVideo}
@@ -156,7 +258,7 @@ const Register = () => {
               type="text"
               {...register("fullName", { required: true })}
               placeholder="Enter Your Name"
-              className="input text-black font-bold"
+              className="input text-black font-bold input-bordered"
             />
             {errors.fullName && <span className="text-red-500">This field is required</span>}
           </div>
@@ -167,8 +269,8 @@ const Register = () => {
             <input
               type="email"
               {...register("email", { required: true })}
-              placeholder="email"
-              className="input text-black font-bold input-bordered rounded w-full p-2 items-center"
+              placeholder="Email"
+              className="input text-black font-bold input-bordered"
             />
             {errors.email && <span className="text-red-500">This field is required</span>}
           </div>
@@ -180,7 +282,7 @@ const Register = () => {
               type="text"
               {...register("image")}
               placeholder="Image URL"
-              className="input text-black font-bold input-bordered p-2 w-full rounded items-center"
+              className="input text-black font-bold input-bordered"
             />
           </div>
           <div className="form-control">
@@ -191,7 +293,7 @@ const Register = () => {
               type="tel"
               {...register("phone", { required: true })}
               placeholder="Phone Number"
-              className="input text-black font-bold input-bordered p-2 w-full rounded items-center"
+              className="input text-black font-bold input-bordered"
             />
             {errors.phone && <span className="text-red-500">This field is required</span>}
           </div>
@@ -203,8 +305,8 @@ const Register = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 {...register("password", { required: true })}
-                placeholder="password"
-                className="input text-black font-bold input-bordered w-full p-2 rounded items-center"
+                placeholder="Password"
+                className="input text-black font-bold input-bordered"
               />
               <span
                 className="absolute mt-4 -ml-5 cursor-pointer"
@@ -218,12 +320,6 @@ const Register = () => {
                 Forgot password?
               </a>
             </label>
-            <p className="font-bold text-center">
-              Have an Account?
-              <NavLink to="/login" className="bg-blue-500 rounded text-black font-bold ml-3">
-                Login
-              </NavLink>
-            </p>
           </div>
           <div className="text-center">
             <button className="btn btn-outline w-full btn-warning font-bold bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">
@@ -238,6 +334,8 @@ const Register = () => {
         </div>
       </div>
     </div>
+
+
   );
 };
 
