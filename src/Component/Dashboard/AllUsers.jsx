@@ -2,21 +2,21 @@ import { useQuery } from "@tanstack/react-query";
 
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
-import UseAxiosCommon from "../Hook/UseAxiosCommon";
+import useAxiosSecure from "../Hook/useAxiosSecure";
 
 
 const AllUsers = () => {
-  const axiousCommon = UseAxiosCommon();
+  const axiosSecure = useAxiosSecure();
   const { data: users = [], refetch } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const res = await axiousCommon.get('/users');
+      const res = await axiosSecure.get('/users');
       return res.data;
     }
   })
 
   const handleMakeAdmin = user => {
-    axiousCommon.patch(`/users/admin/${user._id}`)
+    axiosSecure.patch(`/users/admin/${user._id}`)
       .then(res => {
         console.log(res.data)
         if (res.data.modifiedCount > 0) {
@@ -44,7 +44,7 @@ const AllUsers = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        axiousCommon.delete(`/users/${user._id}`)
+        axiosSecure.delete(`/users/${user._id}`)
           .then(res => {
             if (res.data.deletedCount > 0) {
               refetch();
