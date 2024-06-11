@@ -14,15 +14,16 @@ import {
 } from 'firebase/auth';
 import axios from 'axios';
 import auth from '../firebase';
+import UseAxiosCommon from './Hook/UseAxiosCommon';
 
 export const AuthContext = createContext(null);
-
 const githubProvider = new GithubAuthProvider();
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const axiosCommon = UseAxiosCommon();
 
   const createUser = async (email, password, fullName, photoURL, phoneNumber) => {
     setLoading(true);
@@ -71,16 +72,40 @@ const AuthProvider = ({ children }) => {
   };
 
   // onAuthStateChange
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+  //     setUser(currentUser);
+  //     console.log('CurrentUser-->', currentUser);
+  //     setLoading(false);
+  //   });
+  //   return () => {
+  //     return unsubscribe();
+  //   };
+  // }, []);
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
-      console.log('CurrentUser-->', currentUser);
+      if (currentUser) {
+        // get token and store client
+        const userInfo = { email: currentUser.email };
+        axiosCommon.post('/jwt', userInfo)
+          .then(res => {
+            if (res.data.token) {
+              localStorage.setItem('access-token', res.data.token);
+            }
+          })
+      }
+      else {
+        // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
+        localStorage.removeItem('access-token');
+      }
       setLoading(false);
     });
     return () => {
       return unsubscribe();
-    };
-  }, []);
+    }
+  }, [axiosCommon])
 
   const authInfo = {
     user,

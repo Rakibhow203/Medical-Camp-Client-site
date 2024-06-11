@@ -5,12 +5,22 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../Hook/useAxiosSecure";
 
 
+
 const AllUsers = () => {
   const axiosSecure = useAxiosSecure();
   const { data: users = [], refetch } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const res = await axiosSecure.get('/users');
+      const res = await axiosSecure.get('/users',
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('access-token')}`
+          }
+
+        }
+      );
+
+
       return res.data;
     }
   })
@@ -61,16 +71,18 @@ const AllUsers = () => {
 
   return (
     <div>
+
+
       <div className="flex justify-evenly my-4">
         <h2 className="text-3xl">All Users</h2>
         <h2 className="text-3xl">Total Users: {users.length}</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="table table-zebra w-full">
+        <table className="table w-full">
           {/* head */}
           <thead>
             <tr>
-              <th></th>
+              <th>Sl</th>
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
