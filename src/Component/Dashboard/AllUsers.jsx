@@ -11,16 +11,7 @@ const AllUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const res = await axiosSecure.get('/users',
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('access-token')}`
-          }
-
-        }
-      );
-
-
+      const res = await axiosSecure.get('/users');
       return res.data;
     }
   })
@@ -34,7 +25,7 @@ const AllUsers = () => {
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `${user.name} is an Admin Now!`,
+            title: `${user.displayName} is an Admin Now!`,
             showConfirmButton: false,
             timer: 1500
           });
@@ -93,14 +84,13 @@ const AllUsers = () => {
             {
               users.map((user, index) => <tr key={user._id}>
                 <th>{index + 1}</th>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td>{user?.name}</td>
+                <td>{user?.email}</td>
                 <td>
                   {user.role === 'admin' ? 'Admin' : <button
                     onClick={() => handleMakeAdmin(user)}
                     className="btn btn-lg bg-orange-500">
-                    <FaUsers className="text-white 
-                                        text-2xl"></FaUsers>
+                    <FaUsers className="text-white text-2xl"></FaUsers>
                   </button>}
                 </td>
                 <td>

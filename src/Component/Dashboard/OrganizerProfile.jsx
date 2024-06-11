@@ -82,6 +82,7 @@ const OrganizerProfile = () => {
         <p>Name: {user?.displayName}</p>
         <p>Email: {user?.email}</p>
         <p>Phone: {user?.phoneNumber}</p>
+
         <button
           onClick={() => setIsEditing(true)}
           className="text-white bg-blue-500 px-4 py-2 rounded mt-4"
@@ -97,7 +98,7 @@ const OrganizerProfile = () => {
           <input
             type="text"
             name="name"
-            value={formData.name}
+            value={formData.displayName}
             onChange={handleInputChange}
             className="block w-full mb-4 p-2"
           />

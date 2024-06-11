@@ -7,13 +7,17 @@ import { NavLink, Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import AdminDashboardBanner from "./AdminDashboardBanner";
 import { SiGoogleanalytics } from "react-icons/si";
-import { FaUser } from "react-icons/fa6";
+import useAdmin from "../Hook/useAdmin";
+
 
 
 
 
 const Dashboard = () => {
-  const isAdmin = true
+  const [isAdmin] = useAdmin();
+
+
+
   return (
     <>
       <Helmet>
@@ -164,3 +168,7 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+
