@@ -63,11 +63,11 @@ const ManageCamps = () => {
             <th>Delete</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='bg-white'>
           {
             camps.map((camp, index) =>
 
-              <tr key={camp?._id} className="bg-base-200">
+              <tr key={camp?._id} className="bg-white">
                 <th>{index + 1}</th>
                 <td>{camp?.campName
                 }</td>
