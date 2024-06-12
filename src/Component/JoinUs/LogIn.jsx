@@ -7,29 +7,34 @@ import { Helmet } from "react-helmet-async";
 import SocialLogin from "../Hook/SocialLogin";
 import useAuth from "../Hook/UseAuth";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LogIn = () => {
-  const navigate = useNavigate();
+
+  const { signIn } = useAuth()
 
   const captchaRef = useRef(null);
   const [disabled, setDisabled] = useState(true);
 
-  const { signIn } = useAuth()
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
 
-  const handleLogin = event => {
-    event.preventDefault();
-    const form = event.target;
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+
+
+  const handleLogin = e => {
+    e.preventDefault();
+    const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const result = { email, password };
-    console.log(result);
+    console.log(email, password);
     signIn(email, password).then(result => {
       const user = result.user;
-      console.log(user);
+      // console.log(user);
       Swal.fire({
         title: 'User Logged In Successful',
         showClass: {
@@ -47,7 +52,7 @@ const LogIn = () => {
     `,
         },
       });
-      navigate('/');
+      navigate(from);
     });
   };
 

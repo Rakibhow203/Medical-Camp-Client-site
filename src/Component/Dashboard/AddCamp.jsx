@@ -1,6 +1,5 @@
 
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import UseAxiosCommon from '../Hook/UseAxiosCommon';
@@ -50,12 +49,12 @@ const AddCamp = () => {
         <div>
           <label className="block text-sm font-medium">Camp Name</label>
           <input
-            {...register('name', { required: 'Camp name is required' })}
+            {...register('campName', { required: 'Camp name is required' })}
             className="w-full px-4 py-2 border rounded"
             type="text"
             placeholder="Camp Name"
           />
-          {errors.name && <p className="text-red-600">{errors.name.message}</p>}
+          {errors.campName && <p className="text-red-600">{errors.campName.message}</p>}
         </div>
 
         <div>
@@ -107,12 +106,12 @@ const AddCamp = () => {
         <div>
           <label className="block text-sm font-medium">Healthcare Professional Name</label>
           <input
-            {...register('healthcareProfessional', { required: 'Healthcare Professional Name is required' })}
+            {...register('healthcareProfessionalName', { required: 'Healthcare Professional Name is required' })}
             className="w-full px-4 py-2 border rounded"
             type="text"
             placeholder="Healthcare Professional Name"
           />
-          {errors.healthcareProfessional && <p className="text-red-600">{errors.healthcareProfessional.message}</p>}
+          {errors.healthcareProfessionalName && <p className="text-red-600">{errors.healthcareProfessionalName.message}</p>}
         </div>
 
         <div>
