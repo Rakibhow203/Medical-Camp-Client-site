@@ -105,8 +105,8 @@ const NavBar = () => {
                   referrerPolicy='no-referrer'
                   alt='User Profile Photo'
                   className='w-10 rounded-full'
-                  src={user?.photoURL}
-                  title={user?.displayName}
+                  src={user?.photoURL || user?.image}
+                  title={user?.displayName || user?.name}
                 />
               </button>
               <ul
