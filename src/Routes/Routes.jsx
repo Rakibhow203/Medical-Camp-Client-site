@@ -45,7 +45,7 @@ export const routers = createBrowserRouter([
       {
         path: '/camp-details/:id',
         element: <CampDetails></CampDetails>,
-        loader: () => fetch('http://localhost:5000/allData')
+        loader: () => fetch('https://madical-camp-server.vercel.app/allData')
       },
 
       {
@@ -130,8 +130,8 @@ export const routers = createBrowserRouter([
       {
         path: 'updated/:id',
         element: <UpdateCamp></UpdateCamp>,
-        // loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
-        loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
+        // loader: ({ params }) => fetch(`https://madical-camp-server.vercel.app/allData/${params.id}`)
+        loader: ({ params }) => fetch(`https://madical-camp-server.vercel.app/allData/${params.id}`)
 
       },
 

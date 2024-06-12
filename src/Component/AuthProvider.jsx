@@ -71,17 +71,6 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
 
-  // onAuthStateChange
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //     setUser(currentUser);
-  //     console.log('CurrentUser-->', currentUser);
-  //     setLoading(false);
-  //   });
-  //   return () => {
-  //     return unsubscribe();
-  //   };
-  // }, []);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {

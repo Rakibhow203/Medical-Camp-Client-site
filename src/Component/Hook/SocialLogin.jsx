@@ -17,7 +17,7 @@ const SocialLogin = () => {
         name: result.user?.displayName,
         photoURL: result.user?.photoURL,
       };
-      fetch('http://localhost:5000/users', {
+      fetch('https://madical-camp-server.vercel.app/users', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',

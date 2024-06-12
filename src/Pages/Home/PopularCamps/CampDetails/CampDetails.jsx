@@ -73,7 +73,7 @@ const CampDetails = () => {
     const addAll = {
       name, campFees, location, health, email, age, phone, gender, emergencyContact
     }
-    fetch('http://localhost:5000/participant', {
+    fetch('https://madical-camp-server.vercel.app/participant', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

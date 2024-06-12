@@ -14,7 +14,7 @@ const AvailableCampPage = () => {
     const fetchCamps = async () => {
       try {
         // Fetch data from the API
-        const response = await axios.get('http://localhost:5000/allData');
+        const response = await axios.get('https://madical-camp-server.vercel.app/allData');
 
         // Sort the camps by participant count in descending order
         const sortedCamps = response.data.sort((a, b) => b.participantCount - a.participantCount);

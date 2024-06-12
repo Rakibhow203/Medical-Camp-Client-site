@@ -15,6 +15,7 @@ import useAdmin from "../Hook/useAdmin";
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
+  // const isAdmin = true;
   return (
     <>
       <Helmet>
@@ -75,31 +76,8 @@ const Dashboard = () => {
 
 
                   {/* -------------------------------------------- */}
-                 
 
-                  <li className="text-lg text-black font-medium ">
-                    <NavLink to="/dashboard/analytics">
-                      <SiGoogleanalytics /> Analytics
-                    </NavLink>
-                  </li>
-                  <li className="text-lg text-black font-medium " >
-                    <NavLink to="/dashboard/profile">
-                      <GiEgyptianProfile /> Participant Profile
-                    </NavLink>
-                  </li>
-                  <li className="text-lg text-black font-medium " >
-                    <NavLink to="/dashboard/ParticipantRegisteredCamps">
-                      <MdManageAccounts></MdManageAccounts>
-                      Registered Camps
-                    </NavLink>
 
-                  </li>
-                  <li className="text-base text-black font-medium " >
-                    <NavLink to="/dashboard/payment">
-                      <MdAppRegistration ></MdAppRegistration>
-                      Payment History
-                    </NavLink>
-                  </li>
 
                 </> :
 

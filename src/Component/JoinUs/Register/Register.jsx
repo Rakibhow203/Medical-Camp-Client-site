@@ -49,7 +49,12 @@ const Register = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
       // Prepare user info for database
-      const userInfo = { displayName, email, photoURL, phoneNumber };
+      const userInfo = {
+        displayName,
+        email,
+        photoURL,
+        phoneNumber
+      };
 
       // Add user to the database
       const res = await axiosCommon.post('/users', userInfo);

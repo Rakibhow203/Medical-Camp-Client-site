@@ -13,7 +13,7 @@ const Feedback = () => {
     const fetchFeedback = async () => {
       try {
         // Corrected URL format: remove the leading "/"
-        const response = await axios.get("http://localhost:5000/feedback");
+        const response = await axios.get("https://madical-camp-server.vercel.app/feedback");
         setFeedback(response.data);
       } catch (error) {
         console.error("Error fetching feedback:", error);
