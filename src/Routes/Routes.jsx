@@ -25,7 +25,7 @@ import ParticipantRegisteredCamps from "../Component/Dashboard/ParticipantRegist
 import UserHome from "../Component/Dashboard/UserHome/UserHome";
 import AdminHome from "../Component/Dashboard/AdminHome/AdminHome";
 import AllUsers from "../Component/Dashboard/AllUsers";
-import DoctorsList from "../Component/AvailableCamps/DoctorsList";
+import DoctorsVews from "../Component/AvailableCamps/DoctorsVews";
 
 
 
@@ -91,7 +91,7 @@ export const routers = createBrowserRouter([
 
 
         path: 'consultants',
-        element: <DoctorsList></DoctorsList>
+        element: <DoctorsVews></DoctorsVews>
       },
 
       // private routes
