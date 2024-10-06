@@ -61,6 +61,7 @@ const NavBar = () => {
         {/* Navigation Links */}
         <div className="flex items-center space-x-6">
           <NavLink exact to="/" className="text-white text-xl hover:text-yellow-400 transition">Home</NavLink>
+          <NavLink exact to="/consultants" className="text-white text-xl hover:text-yellow-400 transition">Consultants Info</NavLink>
           <NavLink to="/AvailableCamps" className="text-white text-xl hover:text-yellow-400 transition">Available Camps</NavLink>
 
           {user && (

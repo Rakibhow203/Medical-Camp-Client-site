@@ -25,6 +25,8 @@ import ParticipantRegisteredCamps from "../Component/Dashboard/ParticipantRegist
 import UserHome from "../Component/Dashboard/UserHome/UserHome";
 import AdminHome from "../Component/Dashboard/AdminHome/AdminHome";
 import AllUsers from "../Component/Dashboard/AllUsers";
+import DoctorsList from "../Component/AvailableCamps/DoctorsList";
+
 
 
 
@@ -82,7 +84,15 @@ export const routers = createBrowserRouter([
         path: 'payNow',
         element: <Pay></Pay>
 
-      }
+      },
+
+
+      {
+
+
+        path: 'consultants',
+        element: <DoctorsList></DoctorsList>
+      },
 
       // private routes
 
